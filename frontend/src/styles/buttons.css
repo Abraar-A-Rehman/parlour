@@ -1,0 +1,83 @@
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.btn-small {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--rose);
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover {
+  background: var(--rose-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--rose-dark);
+  border-color: var(--rose);
+}
+
+.btn-outline:not(:disabled):hover {
+  background: var(--bg-alt);
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--ink);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-danger:not(:disabled):hover {
+  background: #fdecea;
+}
+
+.btn-link {
+  background: none;
+  color: var(--rose-dark);
+  text-decoration: underline;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

@@ -1,0 +1,195 @@
+/* ---------- hero ---------- */
+.hero {
+  background: linear-gradient(135deg, #5b2a3d 0%, #b5546b 60%, #d9a48f 100%);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 6rem 1.25rem 5rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+}
+
+.offer-bar {
+  background: var(--gold);
+  color: #3a2a10;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+/* ---------- sections ---------- */
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+.section.alt {
+  max-width: none;
+  background: var(--bg-alt);
+}
+
+.section.alt > * {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section.narrow {
+  max-width: 760px;
+}
+
+.section.wide {
+  max-width: 1240px;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.2rem 0 0.5rem;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-img.placeholder {
+  display: grid;
+  place-items: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #d9a48f, #b5546b);
+}
+
+.service-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.service-body p {
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.service-body .btn {
+  align-self: flex-start;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.why-card {
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.why-icon {
+  font-size: 2.2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.about-text {
+  max-width: 720px;
+  font-size: 1.1rem;
+}
+
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}

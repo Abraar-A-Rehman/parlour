@@ -1,0 +1,86 @@
+/* ---------- calendar + slots ---------- */
+.slot-picker {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.calendar {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  background: #fff;
+}
+
+.calendar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.calendar-weekday {
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: 0.3rem 0;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.calendar-day:not(:disabled):hover {
+  background: var(--bg-alt);
+}
+
+.calendar-day:disabled {
+  color: #c9bcb6;
+  cursor: not-allowed;
+}
+
+.calendar-day.today {
+  border-color: var(--gold);
+}
+
+.calendar-day.selected {
+  background: var(--rose);
+  color: #fff;
+}
+
+.slot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.slot {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.slot:hover {
+  border-color: var(--rose);
+}
+
+.slot.selected {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: #fff;
+}
