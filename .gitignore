@@ -1,0 +1,18 @@
+# build output
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# uploaded images (created at runtime)
+backend/uploads/
+
+# secrets and local config
+.env
+*.env.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

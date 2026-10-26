@@ -1,0 +1,57 @@
+# Local development uses only the database container:
+#     docker compose up -d
+# The whole application in containers (database + API + website on http://localhost:5173):
+#     docker compose --profile full up -d --build
+# Stop: docker compose --profile full down      (add -v to also delete the database data)
+#
+# Settings can be overridden with a .env file (copy .env.example to .env).
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: parlour-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: parlour
+    ports:
+      - "3306:3306"
+    volumes:
+      - parlour-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    profiles: ["full"]
+    build: ./backend
+    container_name: parlour-backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/parlour?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USER: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      JWT_SECRET: ${JWT_SECRET:-change-this-to-a-long-random-secret-at-least-32-chars}
+    ports:
+      - "8080:8080"
+    volumes:
+      - parlour-uploads:/app/uploads
+
+  web:
+    profiles: ["full"]
+    build: ./frontend
+    container_name: parlour-web
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  parlour-data:
+  parlour-uploads:
